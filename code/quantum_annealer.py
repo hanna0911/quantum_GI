@@ -8,8 +8,9 @@ import os
 
 
 folder = str(sys.argv[1])
+steps = 1000 if len(sys.argv) < 3 else int(sys.argv[2])
 
-figure_save_path = f"output/{folder}"
+figure_save_path = f"output/{folder}_{steps}"
 if not os.path.exists(figure_save_path):
     os.makedirs(figure_save_path)
 
@@ -195,11 +196,11 @@ print(f'finished generating HP_2 in {time.time() - start} s\n')
 
 
 start = time.time()
-energy1, Q2_1, Mx_1 = annealing_solver(1000, H0, HP_1)
+energy1, Q2_1, Mx_1 = annealing_solver(steps, H0, HP_1)
 print(f'finished 1st annealing in {time.time() - start} s\n')
 
 start = time.time()
-energy2, Q2_2, Mx_2 = annealing_solver(1000, H0, HP_2)
+energy2, Q2_2, Mx_2 = annealing_solver(steps, H0, HP_2)
 print(f'finished 2nd annealing in {time.time() - start} s\n')
 
 # print(np.linalg.eig(H1)[0])  # 验证特征值
