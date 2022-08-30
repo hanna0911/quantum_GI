@@ -11,6 +11,6 @@ pip install -r requirements.txt
 
 在code/文件夹下执行
 ```bash
-python quantum_annealer.py input/sample01.input
+python quantum_annealer.py 01
 ```
 输出结果将生成在output/文件夹中
