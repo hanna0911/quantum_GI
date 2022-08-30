@@ -31,7 +31,7 @@ def generate_matrix():
         ans = [] 
         newline = []
         ans.append(newline)
-        for c in string1:
+        for c in string:
             if c == '\n':
                 newline = []
                 ans.append(newline)
